@@ -19,17 +19,17 @@ export default function Contact() {
     {
       icon: <PiPhoneThin className="w-6 h-6 text-primary" />,
       title: "Telefone",
-      content: "(11) 99999-9999"
+      content: "(11) 95410-1856"
     },
     {
       icon: <PiMailboxThin className="w-6 h-6 text-primary" />,
       title: "Email",
-      content: "contato@anecaroline.com.br"
+      content: "anemastos01@hotmail.com"
     },
     {
       icon: <PiMapPinAreaThin className="w-6 h-6 text-primary" />,
       title: "Endereço",
-      content: "São Paulo, SP"
+      content: "Esperantina, PI, Brasil"
     }
   ];
 
