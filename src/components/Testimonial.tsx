@@ -33,7 +33,7 @@ export default function Testimonial() {
           <div className="max-w-2xl mx-auto px-4">          
             <Swiper
               modules={[Pagination, Autoplay]}
-              pagination={{ clickable: true }}
+              pagination={{ dynamicBullets: true, clickable: true }}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
               loop={true}
               className="testimonial-slider"

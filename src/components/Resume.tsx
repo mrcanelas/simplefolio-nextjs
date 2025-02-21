@@ -33,22 +33,22 @@ export default function Resume() {
   const items: ResumeItem[] = [
     {
       title: "UNIVERSIDADE ANHEMBI MORUMBI",
-      description: "Licenciatura e Bacharelado em Dança, com experiência em Balé Clássico, Dança Moderna, Dança Contemporânea e Danças Populares Brasileiras.",
+      description: "Licenciatura e Bacharelado em Dança, com experiência prática em Balé Clássico, Dança Moderna, Dança Contemporânea.",
       icon: "education"
     },
     {
       title: "FORMAÇÃO COMPLEMENTAR",
-      description: "Especialização em Danças Urbanas e Dança do Ventre, com foco em metodologias de ensino e criação coreográfica.",
+      description: "Formação Profissional em Forró, Aperfeiçoamento em Educação Artística, Danças Populares Brasileiras, Danças Urbanas e Dança do Ventre, com foco em metodologias de ensino e criação coreográfica.",
       icon: "education"
     },
     {
       title: "GRUPO CORPO MOLDE",
-      description: "Intérprete, pesquisadora e assistente de direção em diversos espetáculos e projetos contemplados por editais renomados.",
+      description: "Intérprete, pesquisadora, assistente de produção e social media em diversos espetáculos e projetos contemplados por editais renomados na cidade de São Paulo.",
       icon: "work"
     },
     {
       title: "SECRETARIA MUNICIPAL DE EDUCAÇÃO DE SÃO PAULO",
-      description: "Professora de Arte, aliando prática pedagógica à vivência artística no ensino fundamental.",
+      description: "Professora de Arte, promovendo projetos de dança criativa e inclusão social, destacando a dança como ferramenta pedagógica e de transformação social.",
       icon: "work"
     }
   ];

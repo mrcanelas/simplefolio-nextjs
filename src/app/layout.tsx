@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ane Caroline - Dançarina & Professora de Dança",
+  title: "Ane Caroline - Artista & Educadora",
   description: "Ane Caroline é dançarina e professora de dança, compartilhando sua paixão pela arte do movimento. Conheça seu trabalho, aulas e apresentações",
 };
 

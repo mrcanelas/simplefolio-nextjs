@@ -46,21 +46,54 @@ export default function Portfolio() {
 
   const projects: selectedProject[] = [
     {
+      id: 0,
+      category: "education",
+      title: "Professora de Arte",
+      subTitle: "Secretaria Municipal de Educação de São Paulo",
+      description: "",
+      images: [
+        "/pmsp1.jpg",
+        "/pmsp2.jpg",
+        "/pmsp3.jpg",
+        "/pmsp4.jpg",
+        "/pmsp5.jpg",
+        "/pmsp6.jpg",
+      ],
+    },
+    {
       id: 1,
       category: "production",
-      title: "Espetáculo Djovenski",
-      subTitle: "Grupo Corpo Molde",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis enim.",
-      images: ["/djovenski.jpg"],
+      title: "Projeto Corpo Brasilidades",
+      subTitle: "São Paulo Escola de Dança e Grupo Corpo Molde",
+      description: "",
+      images: [
+        "/corpo1.jpg",
+        "/corpo2.jpg",
+        "/corpo3.jpg",
+        "/corpo4.jpg",
+        "/corpo5.jpg",
+      ],
     },
     {
       id: 2,
+      category: "production",
+      title: "Espetáculo Djovenski",
+      subTitle: "Grupo Corpo Molde",
+      description: "",
+      images: [
+        "/djovenski1.jpg",
+        "/djovenski2.jpg",
+        "/djovenski3.jpg",
+        "/djovenski4.jpg",
+        "/djovenski5.jpg",
+      ],
+    },
+    {
+      id: 3,
       category: "interpreter",
       title: "Espetáculo Sapiens",
       subTitle: "Grupo Corpo Molde",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis enim.",
+      description: "",
       images: [
         "/sapiens1.jpg",
         "/sapiens2.jpg",
@@ -71,12 +104,11 @@ export default function Portfolio() {
       ],
     },
     {
-      id: 3,
+      id: 4,
       category: "interpreter",
       title: "Espetáculo Bambaquerê",
       subTitle: "Grupo Corpo Molde",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis enim.",
+      description: "",
       images: [
         "/bambaquere1.png",
         "/bambaquere2.jpg",
@@ -85,18 +117,52 @@ export default function Portfolio() {
       ],
     },
     {
-      id: 4,
+      id: 5,
+      category: "production",
+      title: "Espetáculo Pèrègun A Nativa",
+      subTitle: "Núcleo Pèrègun",
+      description: "",
+      images: [
+        "/peregum1.JPG",
+        "/peregum2.JPG",
+        "/peregum3.JPG",
+        "/peregum4.JPG",
+        "/peregum5.JPG",
+      ],
+    },
+    {
+      id: 6,
+      category: "production",
+      title: "Projeto: Caminho, Ancestralidade e Evolução",
+      subTitle: "Grupo Afoxé Omodé Obá",
+      description: "",
+      images: [
+        "/afoxe1.jpg",
+        "/afoxe2.jpg",
+        "/afoxe3.jpg",
+        "/afoxe4.jpg",
+        "/afoxe5.jpg",
+      ],
+    },
+    {
+      id: 7,
       category: "interpreter",
-      title: "Projeto 4",
-      subTitle: "Grupo Corpo Molde",
-      description: "Descrição do Projeto 4",
-      images: ["/sapiens4.jpg"],
+      title: "Festival de Dança de Teresina",
+      subTitle: "Companhia de Dança Rocked",
+      description: "",
+      images: [
+        "/rocked1.JPG",
+        "/rocked2.JPG",
+        "/rocked3.JPG",
+        "/rocked4.JPG",
+        "/rocked5.JPG",
+      ],
     },
   ];
 
   return (
     <section id="portfolio">
-    <div className="w-full space-y-16 flex flex-col items-center justify-center">
+      <div className="w-full space-y-16 flex flex-col items-center justify-center">
         <SectionTitle title="Últimos Projetos" />
         <div className="w-full flex flex-wrap justify-center gap-4 items-center">
           <ul className="flex flex-wrap justify-center gap-4 uppercase tracking-[2px] font-lato text-secondary text-sm relative">
@@ -118,54 +184,55 @@ export default function Portfolio() {
             ))}
           </ul>
         </div>
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8"
-        >
-          <AnimatePresence>
-            {projects
-              .filter(
-                (project) =>
-                  selectedCategory === "all" ||
-                  project.category === selectedCategory
-              )
-              .map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative group overflow-hidden cursor-pointer"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  <Image
-                    src={project.images[0]}
-                    alt={project.title}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    quality={100}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                  <div className="absolute inset-0 bg-white/90 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
-                    <span className="absolute left-[30px] bottom-[30px] w-[70px] h-[70px] border-l border-b border-primary transition-all duration-300 ease-out"></span>
-                    <span className="absolute right-[30px] top-[30px] w-[70px] h-[70px] border-r border-t border-primary transition-all duration-300 ease-out"></span>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center space-y-5">
-                      <h4 className="text-sm uppercase tracking-[2px] text-primary font-lato opacity-0 translate-y-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 delay-[200ms]">
-                        {project.title}
-                      </h4>
-                      <span className="text-base tracking-[1px] text-[#505050] font-lato font-light opacity-0 translate-y-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 delay-[400ms]">
-                        {project.subTitle}
-                      </span>
+        <div className="w-full max-w-7xl">
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8"
+          >
+            <AnimatePresence>
+              {projects
+                .filter(
+                  (project) =>
+                    selectedCategory === "all" ||
+                    project.category === selectedCategory
+                )
+                .map((project) => (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative group overflow-hidden cursor-pointer h-[245px] md:h-[229px] lg:h-[335px]"
+                    onClick={() => setSelectedProject(project)}
+                  >
+                    <Image
+                      src={project.images[0]}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={100}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-white/90 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
+                      <span className="absolute left-[30px] bottom-[30px] w-[70px] h-[70px] border-l border-b border-primary transition-all duration-300 ease-out"></span>
+                      <span className="absolute right-[30px] top-[30px] w-[70px] h-[70px] border-r border-t border-primary transition-all duration-300 ease-out"></span>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center space-y-5">
+                        <h4 className="text-sm uppercase tracking-[2px] text-primary font-lato opacity-0 translate-y-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 delay-[200ms]">
+                          {project.title}
+                        </h4>
+                        <span className="text-base tracking-[1px] text-[#505050] font-lato font-light opacity-0 translate-y-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 delay-[400ms]">
+                          {project.subTitle}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-          </AnimatePresence>
-        </motion.div>
+                  </motion.div>
+                ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
+      </div>
       {selectedProject && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 p-4">
           <motion.div
