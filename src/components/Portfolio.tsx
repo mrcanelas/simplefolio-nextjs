@@ -123,11 +123,11 @@ export default function Portfolio() {
       subTitle: "Núcleo Pèrègun",
       description: "",
       images: [
-        "/peregum1.JPG",
-        "/peregum2.JPG",
-        "/peregum3.JPG",
-        "/peregum4.JPG",
-        "/peregum5.JPG",
+        "/peregun1.JPG",
+        "/peregun2.JPG",
+        "/peregun3.JPG",
+        "/peregun4.JPG",
+        "/peregun5.JPG",
       ],
     },
     {
@@ -234,13 +234,17 @@ export default function Portfolio() {
         </div>
       </div>
       {selectedProject && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 p-4">
+        <div 
+          className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 p-4"
+          onClick={() => setSelectedProject(null)}
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
             className="relative bg-white w-full max-w-[710px] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               className="absolute top-4 right-4 text-white hover:text-secondary p-2 z-10"
