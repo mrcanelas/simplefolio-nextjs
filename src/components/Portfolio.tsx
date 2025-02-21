@@ -95,7 +95,8 @@ export default function Portfolio() {
   ];
 
   return (
-    <section className="w-full space-y-16 flex flex-col items-center justify-center" id="portfolio">
+    <section id="portfolio">
+    <div className="w-full space-y-16 flex flex-col items-center justify-center">
         <SectionTitle title="Últimos Projetos" />
         <div className="w-full flex flex-wrap justify-center gap-4 items-center">
           <ul className="flex flex-wrap justify-center gap-4 uppercase tracking-[2px] font-lato text-secondary text-sm relative">
@@ -164,6 +165,7 @@ export default function Portfolio() {
               ))}
           </AnimatePresence>
         </motion.div>
+        </div>
       {selectedProject && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 p-4">
           <motion.div
@@ -171,7 +173,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white w-full max-w-[710px] overflow-hidden"
+            className="relative bg-white w-full max-w-[710px] flex flex-col"
           >
             <button
               className="absolute top-4 right-4 text-white hover:text-secondary p-2 z-10"
@@ -180,42 +182,43 @@ export default function Portfolio() {
               <LuX size={20} />
             </button>
 
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay, EffectFade]}
-              navigation
-              pagination={{ dynamicBullets: true }}
-              autoplay={{ delay: 2000, disableOnInteraction: true }}
-              effect="fade"
-              loop
-              className="w-full h-[470px]"
-              style={
-                {
-                  "--swiper-navigation-size": "20px",
-                  "--swiper-navigation-color": "#fff",
-                  "--swiper-pagination-color": "#fff",
-                } as React.CSSProperties
-              }
-            >
-              {selectedProject.images.map((img, index) => (
-                <SwiperSlide key={index}>
-                  <Image
-                    src={img}
-                    alt={selectedProject.title}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    quality={100}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[470px]">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                navigation
+                pagination={{ dynamicBullets: true }}
+                autoplay={{ delay: 2000, disableOnInteraction: true }}
+                effect="fade"
+                loop
+                className="w-full h-full"
+                style={
+                  {
+                    "--swiper-navigation-size": "20px",
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-pagination-color": "#fff",
+                  } as React.CSSProperties
+                }
+              >
+                {selectedProject.images.map((img, index) => (
+                  <SwiperSlide key={index} className="bg-black">
+                    <Image
+                      src={img}
+                      alt={selectedProject.title}
+                      fill
+                      sizes="100vw"
+                      quality={100}
+                      className="object-cover"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
-            <div className="p-8 space-y-4">
+            <div className="p-4 sm:p-6 md:p-8 space-y-4">
               <h4 className="tracking-[2px] text-sm font-lato uppercase font-normal text-primary">
                 {selectedProject.title}
               </h4>
-              <p className="text-gray-600 font-lato font-light mt-2">
+              <p className="text-gray-600 font-lato font-light mt-2 line-clamp-4">
                 {selectedProject.description}
               </p>
             </div>
