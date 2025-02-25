@@ -16,6 +16,7 @@ interface selectedProject {
   category: string;
   title: string;
   subTitle: string;
+  role: string;
   description: string;
   images: string[];
 }
@@ -50,7 +51,8 @@ export default function Portfolio() {
       category: "education",
       title: "Professora de Arte",
       subTitle: "Secretaria Municipal de Educação de São Paulo",
-      description: "",
+      role: "Professora de Arte",
+      description: `Como professora de Arte, utiliza a dança para ampliar a expressão dos alunos, explorando diversos estilos e culturas. Ela promove eventos e apresentações na escola, criando momentos para que os estudantes compartilhem sua arte com a família. A dança se torna uma ferramenta de aprendizado, inclusão e fortalecimento da identidade cultural no ambiente escolar.`,
       images: [
         "/pmsp1.jpg",
         "/pmsp2.jpg",
@@ -65,7 +67,8 @@ export default function Portfolio() {
       category: "production",
       title: "Projeto Corpo Brasilidades",
       subTitle: "São Paulo Escola de Dança e Grupo Corpo Molde",
-      description: "",
+      role: "Assistente de Direção e Coreografia",
+      description: `O projeto resgata as ancestralidades corporais dos participantes por meio de exercícios e reflexões, culminando na coreografia "O chão que a gente pisa". Explora identidade, corporeidade e valoriza mestres da cultura tradicional e clássica brasileira, reconhecendo o corpo como território de memória e pertencimento.`,
       images: [
         "/corpo1.jpg",
         "/corpo2.jpg",
@@ -77,9 +80,10 @@ export default function Portfolio() {
     {
       id: 2,
       category: "production",
-      title: "Espetáculo Djovenski",
+      title: "Projeto FRONTEIRA",
       subTitle: "Grupo Corpo Molde",
-      description: "",
+      role: "Assistente de Produção e Social Media",
+      description: `O projeto FRONTEIRA - O dia que o mar definiu a liberdade busca expressar indignações sobre as relações humanitárias e os fluxos migratórios entre territórios, periferias, centros, estados e países. Também explora a construção de vínculos, pertencimento e sobrevivência, reforçando a ideia de que nenhum corpo é ilegal.`,
       images: [
         "/djovenski1.jpg",
         "/djovenski2.jpg",
@@ -91,9 +95,10 @@ export default function Portfolio() {
     {
       id: 3,
       category: "interpreter",
-      title: "Espetáculo Sapiens",
+      title: "Projeto SAPIENS",
       subTitle: "Grupo Corpo Molde",
-      description: "",
+      role: "Interprete, Assistente de Produção e Social Media",
+      description: `O projeto SAPIENS explora a busca por um ser "além", pautado em status social, político e cultural. Reflete sobre a construção e reconstrução da sociedade contemporânea, questionando como a cultura resiste em um país que pouco a reconhece. A partir das ruínas dessa cultura, surge a reflexão: o que ainda podemos construir para garantir sua sobrevivência?`,
       images: [
         "/sapiens1.jpg",
         "/sapiens2.jpg",
@@ -108,7 +113,8 @@ export default function Portfolio() {
       category: "interpreter",
       title: "Espetáculo Bambaquerê",
       subTitle: "Grupo Corpo Molde",
-      description: "",
+      role: "Interprete",
+      description: `Bambaquerê - Uma Dança em Confusão convida o público a refletir sobre a infância por meio da Dança Contemporânea e das Danças Tradicionais Brasileiras. A coreografia explora o desenvolvimento motor infantil e seus padrões sociais, familiares e lúdicos, dialogando com brincadeiras e jogos de criança para criar uma interação envolvente com o público.`,
       images: [
         "/bambaquere1.png",
         "/bambaquere2.jpg",
@@ -121,7 +127,8 @@ export default function Portfolio() {
       category: "production",
       title: "Espetáculo Pèrègun A Nativa",
       subTitle: "Núcleo Pèrègun",
-      description: "",
+      role: "Assistente de Produção e Social Media",
+      description: `O nome Pèrègun - A Nativa une termos do candomblé Ketu e da cultura indígena para nomear a planta usada para afastar energias negativas. O projeto busca, por meio da arte, "limpar" o cenário atual de intolerância, pandemia, falta de humanidade e guerras, promovendo reflexão e transformação diante desses desafios.`,
       images: [
         "/peregun1.JPG",
         "/peregun2.JPG",
@@ -135,7 +142,8 @@ export default function Portfolio() {
       category: "production",
       title: "Projeto: Caminho, Ancestralidade e Evolução",
       subTitle: "Grupo Afoxé Omodé Obá",
-      description: "",
+      role: "Assistente de Produção e Social Media",
+      description: `O projeto Caminhos | Ancestralidade | Evolução do AFOXÉ ỌMỌDÉ ỌBA (Crianças do Rei) promove encontros culturais negros, valorizando as raízes e tradições. Os afoxés, além da música e dança, representam uma rica identidade e memória, resgatando e fortalecendo a ancestralidade afro-brasileira, reafirmando essa herança cultural nas gerações.`,
       images: [
         "/afoxe1.jpg",
         "/afoxe2.jpg",
@@ -149,7 +157,8 @@ export default function Portfolio() {
       category: "interpreter",
       title: "Festival de Dança de Teresina",
       subTitle: "Companhia de Dança Rocked",
-      description: "",
+      role: "Interprete",
+      description: "Participou como intérprete-dançarina nos festivais de dança de Teresina e da UFPI. No Festival de Dança de Teresina, seu grupo conquistou o 5º lugar, e no da UFPI, garantiu o 3º lugar. Cada apresentação evidenciou sua dedicação e evolução artística, tornando essas experiências momentos marcantes em sua trajetória na dança.",
       images: [
         "/rocked1.JPG",
         "/rocked2.JPG",
@@ -234,7 +243,7 @@ export default function Portfolio() {
         </div>
       </div>
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 p-4"
           onClick={() => setSelectedProject(null)}
         >
@@ -286,10 +295,15 @@ export default function Portfolio() {
             </div>
 
             <div className="p-4 sm:p-6 md:p-8 space-y-4">
-              <h4 className="tracking-[2px] text-sm font-lato uppercase font-normal text-primary">
-                {selectedProject.title}
-              </h4>
-              <p className="text-gray-600 font-lato font-light mt-2 line-clamp-4">
+              <div>
+                <h4 className="tracking-[2px] text-base font-lato uppercase font-normal text-primary">
+                  {selectedProject.title}
+                </h4>
+                <h5 className="text-sm font-lato font-light text-gray-600">
+                  {selectedProject.role}
+                </h5>
+              </div>
+              <p className="text-gray-600 font-lato font-light text-justify mt-2 line-clamp-4">
                 {selectedProject.description}
               </p>
             </div>
